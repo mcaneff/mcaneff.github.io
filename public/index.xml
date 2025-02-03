@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jan 2025 01:26:07 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Second Test Post</title>
+      <link>http://localhost:1313/post/second-test-post/</link>
+      <pubDate>Mon, 20 Jan 2025 01:09:37 +0200</pubDate>
+      
+      <guid>http://localhost:1313/post/second-test-post/</guid>
+      
+        <description>&lt;p&gt;some bs here&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The first test post</title>
+      <link>http://localhost:1313/post/a-test-post/</link>
+      <pubDate>Mon, 20 Jan 2025 00:56:05 +0200</pubDate>
+      
+      <guid>http://localhost:1313/post/a-test-post/</guid>
+      
+        <description>&lt;p&gt;This is just the first test post&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 16 Jan 2025 20:57:53 +0200</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;p&gt;I&amp;rsquo;m Michael—an engineer, graduate student, and passionate learner in the fields of aerospace and 3D design. My journey is guided by curiosity and a desire to explore the boundaries of innovation. With a strong foundation in engineering and a love for discovery, I aim to bridge the gap between imagination and reality by developing tools like a planetary dynamics visualizer that transforms abstract orbital mechanics concepts into interactive, tangible models.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,65 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
+  [[module.imports]]
+    path = "github.com/lxndrblz/anatole"
+    disable = false
+
+
+[params]
+title = "I'm Mike Foster"
+author = "Mike Doe"
+description = "You can call me Mike"
+profilePicture = "images/Achilles.png"
+doNotLoadAnimations = true # Animations are loaded by default
+contentratio = 0.78
+hidesidebar = false
+mainSections = [] # This will toggle having posts on the homepage or not
+
+[menu]
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+[[menu.main]]
+name = "Accomplishments"
+weight = 500
+identifier = "accomplishments"
+
+[[menu.main]]
+name = "Awards"
+weight = 510
+identifier = "awards"
+url = "/awards/"
+parent = "accomplishments"
+
+[[menu.main]]
+name = "Portfolio"
+weight = 400
+identifier = "portfolio"
+url = "/portfolio/"
+
+[[menu.main]]
+name = "Certifications"
+weight = 520
+identifier = "certifications"
+url = "/certifications/"
+parent = "accomplishments"
