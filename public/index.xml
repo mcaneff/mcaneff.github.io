@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>mcaneff | My Portfolio</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on mcaneff | My Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Jan 2025 01:26:07 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
@@ -36,7 +36,9 @@
       
       <guid>http://localhost:1313/about/</guid>
       
-        <description>&lt;p&gt;I&amp;rsquo;m Michael—an engineer, graduate student, and passionate learner in the fields of aerospace and 3D design. My journey is guided by curiosity and a desire to explore the boundaries of innovation. With a strong foundation in engineering and a love for discovery, I aim to bridge the gap between imagination and reality by developing tools like a planetary dynamics visualizer that transforms abstract orbital mechanics concepts into interactive, tangible models.&lt;/p&gt;</description>
+        <description>&lt;p&gt;I&amp;rsquo;m Michael—an engineer and graduate student with a passion for aerospace and 3D design. I enjoy solving problems, whether through software development, mechanical design, or exploring orbital mechanics. My work and studies focus on understanding spacecraft technologies and their role in space exploration.&lt;/p&gt;
+&lt;h4 id=&#34;background&#34;&gt;Background&lt;/h4&gt;
+&lt;p&gt;I earned my bachelor&amp;rsquo;s degree in Engineering Science with a focus on Computer Engineering from the University of Western Ontario and am currently pursuing a master&amp;rsquo;s in Aerospace Engineering at Sofia University. I also work at Cisco Systems, specializing in VoIP technologies and software development in C++ and Swift.&lt;/p&gt;</description>
       
     </item>
     
