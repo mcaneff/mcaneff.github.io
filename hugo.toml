@@ -18,7 +18,8 @@ profilePicture = "images/Achilles.png"
 doNotLoadAnimations = true # Animations are loaded by default
 contentratio = 0.78
 hidesidebar = false
-gtagId = "${GTAG_ID}"
+gtagId = "G-TKWYTK51EP"
+#gtagId = "${GTAG_ID}"
 
 mainSections = [] # This will toggle having posts on the homepage or not
 
