@@ -1,113 +1,191 @@
 ---
-title: "Lambert's Problem - Its Explanation and Derivation"
+title: "Solving Lambert’s Problem, Part I: Foundations Through Kepler and Geometry"
 date: 2025-02-20T23:56:02+02:00
-description: "A clear and structured explanation of Lambert's Problem in orbital mechanics, with mathematical rigor and accessibility."
-tags: ["orbital mechanics", "astrodynamics","Lambert's problem"]
+description: "A clear and structured explanation of Lambert's Problem in orbital mechanics, focused on the underlying time and geometric constraints of orbital transfers."
+tags: ["orbital mechanics", "astrodynamics", "Lambert's problem"]
 categories: ["Astrodynamics"]
 disableComments: false
 ---
 
 ## Introduction
 
-Welcome! This post aims to provide a clear and accessible explanation of Lambert's Problem in the context of orbital mechanics. My goal is to maintain mathematical rigor while ensuring that even complex concepts are explained at their most fundamental levels—eliminating any mystery behind them.
+Welcome. This post lays the foundation for solving Lambert’s Problem in orbital mechanics—a cornerstone question in mission planning and trajectory design.
 
-**The Core Question**
+> **The Core Question:**  
+> *Given the position of a celestial body at two distinct times, can we determine the orbit it followed?*
 
-Johann Heinrich Lambert posed a fundamental problem in celestial mechanics: 
+More formally: *Can we determine the conic section (typically an ellipse) defined by two position vectors and the time of flight between them?*
 
- *Given the position of a celestial body at two different points in time, can we determine its orbit?*
+This is Part I of a two-part series. Here, we focus on the physical intuition, Keplerian time relationships, and the geometric structure behind Lambert’s Problem. In Part II, we’ll derive and apply the full Lambert formulation.
 
-Stated technically, can we determine the Keplerian elements of a body in orbit using only two position vectors and the time interval between them?
-Rather than diving into the historical context, let's focus directly on the mathematical foundation.
-
-<details open>
-    <summary><strong>Kepler’s Equation</strong></summary>
-  A key component in solving Lambert’s Problem is Kepler’s Equation, which relates position vectors to time of flight:
-
-  $$M = E - e\sin E  \tag{1} $$ 
-    where:
-    - \( M \) is the **Mean Anomaly**,
-    - \( E \) is the **Eccentric Anomaly**,
-    - \( e \) is the **Eccentricity**.
-    
-  **Mean Anomaly**: What this really means is that if we have a circular orbit(implying the rotating body travels at a constant rate) what would its angle be. The implication being that if it were an elipse it would have peroids of high and slow rotation compared to its circle counterpart.\
-  [**Eccentric Anomaly**](https://en.wikipedia.org/wiki/Eccentric_anomaly): If we take an elliptic orbit and then project its True Anomaly ( position or angle \( \theta\ \)) onto a circle, what would it look like if it were a circle?\
-  {{< figure src="eccentric_anamoly.png" width="350px" caption="Eccentric anomaly" >}}
-
-  [**Eccentricity**](https://en.wikipedia.org/wiki/Orbital_eccentricity): Well this is simple how much of a circle does it look like? If its \( e = 0\) then its a circle. If 
-  \( e > 0\) its now an elipse.
-
-  <details open>
-    <summary><strong> Example</strong></summary>
-  Lets say we have a \( SMA = 10000km, t_1 = 0, t_2 = 2000, e = 0.2 \) what would be the true anomaly for this case?\
-  Find angular frequency:
-
-  $$ M = \sqrt{\frac{\mu}{a^3}}  (t_2 - t_1)  $$
-  $$ M = \sqrt{\frac{3.98*10^{14}}{(10000*10^3)^3}}  (2000 - 0)  $$
-  $$ M = 1.261 rad $$
-
-  </details>
-</details>
-
-### The Derivation of Lamberts Equation (Not Lamberts Problem) 
-Ok great now that we're introduced to Keplers equation what we're now doing to try to do is relate two points in time to their true anamoly.\
-
-$$M = E - e\sin E $$
-$$M_2 - M_1 = (E_2 - e\sin E_2) - (E_1 - e\sin E_1)  $$  
-$$ \sqrt{\frac{\mu}{a^3}}  (t_2 - t_p) - (\sqrt{\frac{\mu}{a^3}}  (t_1 - t_p)) = (E_2 - e\sin E_2) - (E_1 - e\sin E_1)  $$  
-$$ \sqrt{\frac{\mu}{a^3}}  (t_2 - t_1) - \cancel{t_p} + \cancel{t_p} = (E_2 - e\sin E_2) - (E_1 - e\sin E_1) $$
-
-Good now do we see what we did here ? Essentially we took Keplers equation and then solved that the time of flight would be between two distinct points here. (Albeieit it in terms of E but from that we can get the True Anamoly)
-
-This now is what we're looking for in essence, We have successfully related the time of flight to the transfer elipse using the Mean Eccentricity of the two points and then all we really have to solve for now is the Semi Major Axis.\
-The issue comes when we dont have access to the Mean Eccentricity what do we do?\
-Well we need to find another way to actually connect this realtionship, but realistically speaking this will serve as the backbone for our proof moving forward.
-
-#### Finding a realtionship between Mean Eccentricity and its Radius
-Luckly for us we get the following relationship:
-$$ r =  \frac{a (1 - e^2) }{1 + e\cos f} = a(1- e\cos E ) $$
-We're going to skip the proof of this, but for a detailed explanation, refer to: *Prussing, J. E., & Conway, B. A. (2013). *Orbital Mechanics* (2nd ed.). Oxford University Press. Section 2.2: "Position and Time in an Elliptic Orbit," p. 28.*
-
-
-So now that we have a direct time of flight we will relate this to Labmert's equation:
-
-$$ \sqrt{\frac{\mu}{a^3}}  (t_2 - t_1) = (E_2 - e\sin E_2) - (E_1 - e\sin E_1) $$
-$$ \sqrt{\frac{\mu}{a^3}}  (t_2 - t_1) = (\cos^{-1}(\frac{a - r_2}{ae}) - e\sin (\cos^{-1}(\frac{a - r_2}{ae})) - (\cos^{-1}(\frac{a - r_1}{ae}) - e\sin (\cos^{-1}(\frac{a - r_1}{ae})) $$
-
-Technically speaking we can stop here, we have a transcendental equation, but we take a powerful computer and just solve the equation given our initial conditions and see what solution we get but this is not pratical really.\
-The real way to go about solving this then... Begin! 
-
-#### Geometric relationship to constrain the formulation of Lambert's problem:
-{{< figure src="Geometric_Property_of_Elipses.png" width="350px" caption="Figure 2: Geometric Property of Ellipses" >}}
-
-Now what we have here is a potiential transfer orbit which involves two points P1 and P2. The main focus if we can call it that is the original focus point between which the satellite orbits( Imagine earth ) the interesting thing to note is the secondary focus point - the vacant focus.\
-Remember it is this vacant focus which we're interested in because through knowing its position we actually find the SMA of the orbit. So lets look at this graph and see what we can find out. Most notibially its the relationship that the summed distance between any point say P1 and the distance to the focus and its vacant focus is 2a.\
-Said in more concrete terms: If I take the distance between P1 and the Focus (F) and **SUM** it with the distance from P1 and the vacant focus (F`) I will get 2a
-
-$$ P_1F + P_1F` = 2a $$
-$$ r_1 + (2a - r_1 ) = 2a $$
-A simple example of this is the following:
-{{< figure src="Geometric_Proof_of_Elipses.png" width="550px" caption="Figure 3: Geometric Proof of Ellipses, Here we see through design programs that if we add up the two vectors pointing to each of the Focuses then what we find is that its equal to 2a" >}} 
-
-{{< figure src="Search_for_SMA.png" width="550px" caption="Figure 4: Search for SMA, now something interesting occures here as we varry the radius around the points we generate two circles. These two circles intersect at different places" >}}
-
-The points where these circles intersect really are the place where the secondary focus exists! That being said at each intersection point we have a solution to the transfer orbit. Note (because if we place a focus there and then create an elipse we pass through P1 and P2)
-Now if we think ok, if at everypoint we have a contact between the two circles we have some kind of a transfer orbit then what occures when we only have a contact at one point? 
-Well at that point really we have a minmum transfer orbit in terms of energy, this transfer orbit will lie one the line between P1 and P2 as seen below:
-
-{{< figure src="Optomal_Energy_Transfer.png" width="550px" caption="Figure 5: Optimal Energy Transfer" >}}
-
-Note this does not mean it requires the least amount of time but the least amount of energy, its also worth noting that the most effieicnt transfer between two points is a circular one. So then given the constraints of our point the orbit which has the most circular orbit which still satasfies by being in the primary focus, P1 and P2 is the most efficient.
-
-We will now discuss why the vacant focus will lie on the line between P1 and P2 and how its calculates
+---
 
 <details open>
-    <summary><strong> Finding The Minimum Transfer</strong></summary>
+  <summary><strong>Kepler’s Equation</strong></summary>
 
-  Explination why the vacant focus will lie on the cord length P1 and P2
+A key component in solving Lambert’s Problem is **Kepler’s Equation**, which links time of flight to position via orbital anomalies:
 
-  </details>
+$$
+M = E - e\sin E \tag{1}
+$$
+
+Where:  
+- \( M \) = **Mean Anomaly**  
+- \( E \) = **Eccentric Anomaly**  
+- \( e \) = **Eccentricity**
+
+**Mean Anomaly:** Think of it as the angular position the body would have if it were moving uniformly in a circular orbit with the same period.
+
+**Eccentric Anomaly:** The projection of the body's true position on the auxiliary circle that circumscribes the ellipse.  
+{{< figure src="eccentric_anamoly.png" width="350px" caption="Eccentric anomaly" >}}
+
+**Eccentricity:** A measure of how much an orbit deviates from circularity.  
+- \( e = 0 \) → perfect circle  
+- \( 0 < e < 1 \) → ellipse  
+[See more on eccentricity](https://en.wikipedia.org/wiki/Orbital_eccentricity)
+
+<details open>
+  <summary><strong>Worked Example</strong></summary>
+
+Let’s say we have:  
+- Semi-major axis \( a = 10,000 \ \text{km} \)  
+- \( t_1 = 0 \), \( t_2 = 2000 \ \text{s} \)  
+- Eccentricity \( e = 0.2 \)
+
+Compute Mean Anomaly:
+
+$$
+M = \sqrt{\frac{\mu}{a^3}}(t_2 - t_1)
+$$
+
+With \( \mu = 3.986 \times 10^{14} \ \text{m}^3/\text{s}^2 \):
+
+$$
+M = \sqrt{\frac{3.986 \times 10^{14}}{(10^7)^3}} \cdot 2000 \approx 1.261 \ \text{rad}
+$$
+
+</details>
 </details>
 
+---
 
+## Time of Flight via Anomalies
 
+To connect Kepler’s Equation to Lambert’s framework, we subtract two time-position relations:
+
+$$
+M = E - e\sin E
+$$
+
+Subtracting between two points:
+
+$$
+M_2 - M_1 = (E_2 - e\sin E_2) - (E_1 - e\sin E_1)
+$$
+
+Now replace Mean Anomaly with time:
+
+$$
+\sqrt{\frac{\mu}{a^3}}(t_2 - t_1) = (E_2 - e\sin E_2) - (E_1 - e\sin E_1)
+$$
+
+This is the first key equation: it expresses the time of flight purely in terms of **eccentric anomalies**.
+
+---
+
+## Radius and Eccentric Anomaly Relationship
+
+We want to move from anomaly-based expressions to ones based on known quantities like position vectors. This helps later when we don’t know the anomalies.
+
+A key identity:
+
+$$
+r = a(1 - e\cos E)
+$$
+
+This connects radius \( r \) at any point to the semi-major axis and eccentric anomaly.
+
+📘 For full derivation, see:  
+*Prussing, J. E., & Conway, B. A. (2013). Orbital Mechanics (2nd ed.). Oxford University Press. Section 2.2, p. 28.*
+
+---
+
+## A Transcendental Form of Lambert’s Equation
+
+Using:
+
+$$
+\sqrt{\frac{\mu}{a^3}}(t_2 - t_1) = (E_2 - e\sin E_2) - (E_1 - e\sin E_1)
+$$
+
+And replacing each \( E \) using:
+
+$$
+E = \cos^{-1} \left(\frac{a - r}{ae}\right)
+$$
+
+We arrive at:
+
+$$
+\begin{aligned}
+\sqrt{\frac{\mu}{a^3}}(t_2 - t_1) &= 
+\left[ \cos^{-1}\left(\frac{a - r_2}{ae} \right) - e\sin\left( \cos^{-1}\left( \frac{a - r_2}{ae} \right) \right) \right] \\
+&- \left[ \cos^{-1}\left(\frac{a - r_1}{ae} \right) - e\sin\left( \cos^{-1}\left( \frac{a - r_1}{ae} \right) \right) \right]
+\end{aligned}
+$$
+
+While solvable with brute force, this form is not practical. A geometric method is more insightful—and more elegant.
+
+---
+
+## Geometric Constraints of the Transfer Orbit
+
+{{< figure src="Geometric_Property_of_Elipses.png" width="350px" caption="Geometric Property of Ellipses" >}}
+
+Every ellipse has two foci. For an orbit, one is occupied by the central body (e.g., Earth). The other—**the vacant focus**—plays a crucial role in determining the transfer orbit.
+
+The ellipse obeys a key property:
+
+> The sum of distances from any point on the ellipse to the two foci equals \( 2a \), the major axis length.
+
+So:
+
+$$
+P_1F + P_1F' = 2a
+$$
+
+Or more concretely:
+
+$$
+r_1 + (2a - r_1) = 2a
+$$
+
+You can visualize this with:
+
+{{< figure src="Geometric_Proof_of_Elipses.png" width="550px" caption="Geometric proof of ellipses using design software." >}}
+
+Now consider how we locate that second focus geometrically. If we fix points \( P_1 \) and \( P_2 \), and draw circles of constant radius from them, the **intersections of those circles** represent potential positions for the vacant focus. Each such point defines a valid elliptical transfer.
+
+{{< figure src="Search_for_SMA.png" width="550px" caption="Search for semi-major axis via geometric intersections." >}}
+
+At each intersection, there exists a possible ellipse passing through \( P_1 \) and \( P_2 \) with the appropriate focal configuration.
+
+> When the two circles touch at **exactly one point**, this corresponds to the **minimum energy transfer** orbit.
+
+{{< figure src="Optomal_Energy_Transfer.png" width="550px" caption="Optimal energy transfer orbit when vacant focus lies on P1-P2 chord." >}}
+
+This orbit requires the **least delta-v**, but **not necessarily the shortest time**. Among all transfer orbits satisfying Lambert’s constraints, the most circular one (least eccentric) tends to be the most efficient energetically.
+
+---
+
+<details open>
+  <summary><strong>Why the Vacant Focus Lies on the Chord</strong></summary>
+
+The minimal-energy ellipse has its secondary focus lying directly on the chord connecting \( P_1 \) and \( P_2 \). This minimizes the ellipse’s eccentricity and thus the required velocity change.
+
+In Part II, we’ll use this geometric constraint, combined with orbital mechanics principles, to derive the full Lambert formulation.
+</details>
+
+---
+
+*Next: In Part II, we’ll solve Lambert’s Problem fully—deriving the final equations

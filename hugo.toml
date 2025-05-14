@@ -25,6 +25,11 @@ customJs = ["js/animation.js"]
 enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex" 
 
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/michael-caneff-324281108/"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -80,3 +85,4 @@ weight = 520
 identifier = "certifications"
 url = "/certifications/"
 parent = "accomplishments"
+
