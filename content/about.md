@@ -12,10 +12,10 @@ I earned my bachelor's degree in Engineering Science with a focus on Computer En
 #### Interests & Projects
 - **Aerospace Engineering** – Exploring spacecraft systems and their potential applications.
 - **3D Design & Printing** – Creating mechanical parts, topological maps, and experimental models.
-- **Software Development** – Building efficient and reliable solutions.
+- **Software Development** – Building efficient and reliable solutions but honestly using it as the workhorse for all my other curiosities.
 
 #### Outside of Work
-I stay active through track sprinting and hiking, always looking for ways to challenge myself and improve. I also enjoy learning new skills and working on personal projects that blend engineering and creativity.
+I stay active through training track and field and hiking in the thracian mountians (they georgeous!), always looking for ways to challenge myself and improve.
 
 #### Let’s Connect
 If you’re interested in aerospace, 3D design, or innovative ideas, feel free to reach out.
