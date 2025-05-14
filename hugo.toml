@@ -11,16 +11,31 @@ title = 'mcaneff | My Portfolio'
 
 
 [params]
-title = "I'm Mike Foster"
-author = "Mike Doe"
+title = "I'm Michael Caneff"
+author = "Mike"
 description = "You can call me Mike"
 profilePicture = "images/Achilles.png"
 doNotLoadAnimations = true # Animations are loaded by default
 contentratio = 0.78
 hidesidebar = false
 gtagId = "G-TKWYTK51EP"
+customCss = ["css/list-title.css", "css/custom.css"] 
+customJs = ["js/animation.js"]
+[params.math]
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex" 
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
 mainSections = [] # This will toggle having posts on the homepage or not
+
 
 [menu]
   [[menu.main]]
