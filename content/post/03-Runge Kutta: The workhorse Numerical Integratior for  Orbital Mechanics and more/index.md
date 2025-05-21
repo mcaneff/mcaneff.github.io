@@ -5,6 +5,7 @@ Description: ""
 Tags: []
 Categories: []
 DisableComments: false
+draft: true
 ---
 
 It is my goal to teach you how this numerical integratior works and hopefully why its better than the classical Euler solver you might be useto
