@@ -15,6 +15,20 @@ portfolioitems:
         status: 'Finished'
         start: '2025'
 
+      - name: Capsule Reentry Toolbox
+        image: 'images/EarthView.png'
+        link: https://github.com/mcaneff/Reentry-Simulation
+        linktext: 'Visit Repo on GitHub'
+        description: 'A 3-DoF reentry toolkit to measure the reentry characteristics using the EGM2008 gravity model and NRLMSISE-00 atmosphere with solar flux support'
+        tags:
+          - Capsule Reentry
+          - Orbital Mechanics
+          - MatLab
+        status: 'Ongoing'
+        start: '2025'
+
+
+
       # - name: Project 2
       #   image: 'images/landscape.png'
       #   link: https://gohugo.io/
