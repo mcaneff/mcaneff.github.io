@@ -1,31 +1,45 @@
 portfolioitems:
   # portfolio category
   - title: Coding Projects
-    description: 'All my coding projects'
     portfolioitem:
-      - name: Podcast - to - Books
-        image: 'images/ancient-philosophers-facade.jpg'
-        link: https://mcaneff.github.io/podcasts-to-books/
-        linktext: 'Visit project website'
-        description: 'An automated tool that transcribes long-form podcast episodes (e.g., Chris Williamson), identifies books mentioned in the dialogue using natural language processing, and generates clean Markdown files with affiliate links and metadata for each book. The goal is to create a low-maintenance, pipeline that transforms podcast conversations into structured reading lists'
-        tags:
-          - Podcast Analytics
-          - NLP
-          - Book Extraction
-        status: 'Finished'
-        start: '2025'
+    - name: Star Tracker (CubeSat-class)
+      image: '/images/Star Identification.jpg'
+      link: https://github.com/Asterix-SC2025/star-treckers
+      linktext: 'Project page'
+      description: "Computer-vision star tracker built on Raspberry Pi 4 (Sony IMX500 + BNO055). Uses a YOLOv8 object detection model to locate star centroids, cross-matches detections to a SQLite catalog, and solves attitude with QUEST. Two-mode state machine (Lost-in-Space / Tracking) streams quaternions to a Next.js viewer."
+      tags:
+      - Computer Vision
+      - Star Tracker
+      - YOLOv8
+      - Python
+      - Embedded
+      - Attitude Determination
+      status: 'Finished'
+      start: '2025'
 
-      - name: Capsule Reentry Toolbox
-        image: 'images/EarthView.png'
-        link: https://github.com/mcaneff/Reentry-Simulation
-        linktext: 'Visit Repo on GitHub'
-        description: 'A 3-DoF reentry toolkit to measure the reentry characteristics using the EGM2008 gravity model and NRLMSISE-00 atmosphere with solar flux support'
-        tags:
-          - Capsule Reentry
-          - Orbital Mechanics
-          - MatLab
-        status: 'Ongoing'
-        start: '2025'
+    - name: Podcast - to - Books
+      image: 'images/ancient-philosophers-facade.jpg'
+      link: https://mcaneff.github.io/podcasts-to-books/
+      linktext: 'Visit project website'
+      description: 'An automated tool that transcribes long-form podcast episodes (e.g., Chris Williamson), identifies books mentioned in the dialogue using natural language processing, and generates clean Markdown files with affiliate links and metadata for each book. The goal is to create a low-maintenance, pipeline that transforms podcast conversations into structured reading lists'
+      tags:
+        - Podcast Analytics
+        - NLP
+        - Book Extraction
+      status: 'Finished'
+      start: '2025'
+
+    - name: Capsule Reentry Toolbox
+      image: 'images/EarthView.png'
+      link: https://github.com/mcaneff/Reentry-Simulation
+      linktext: 'Visit Repo on GitHub'
+      description: 'A 3-DoF reentry toolkit to measure the reentry characteristics using the EGM2008 gravity model and NRLMSISE-00 atmosphere with solar flux support'
+      tags:
+        - Capsule Reentry
+        - Orbital Mechanics
+        - MatLab
+      status: 'Ongoing'
+      start: '2025'
 
 
 
