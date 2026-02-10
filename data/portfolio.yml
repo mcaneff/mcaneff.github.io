@@ -4,6 +4,7 @@ portfolioitems:
     portfolioitem:
     - name: AvMAP — Avalanche Detectors
       link: https://www.cassini.eu/hackathons/portfolio
+      image: '/images/cassini-avalanche-detectors-winner.png'
       linktext: 'CASSINI portfolio'
       description: "Space-enabled project for real-time avalanche detection and risk mapping. Founder and technical lead; developed a real-time avalanche detection and decision-support concept integrating Earth Observation data, risk modeling, and system-level design. Target users: mountaineers, ski resorts, rescue services, infrastructure operators. Project recognized at EU level through CASSINI."
       tags:
