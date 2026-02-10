@@ -62,25 +62,25 @@ mainSections = [] # This will toggle having posts on the homepage or not
   url = "/about/"
 
 [[menu.main]]
-name = "Accomplishments"
-weight = 500
-identifier = "accomplishments"
-
-[[menu.main]]
-name = "Awards"
-weight = 510
-identifier = "awards"
-url = "/awards/"
-parent = "accomplishments"
-
-[[menu.main]]
 name = "Portfolio"
 weight = 400
 identifier = "portfolio"
 url = "/portfolio/"
 
 [[menu.main]]
-name = "Certifications"
+name = "Recognition"
+weight = 500
+identifier = "accomplishments"
+
+[[menu.main]]
+name = "Awards & Recognition"
+weight = 510
+identifier = "awards"
+url = "/awards/"
+parent = "accomplishments"
+
+[[menu.main]]
+name = "Media Coverage"
 weight = 520
 identifier = "certifications"
 url = "/certifications/"
